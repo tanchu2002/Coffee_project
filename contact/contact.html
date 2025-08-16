@@ -9,71 +9,107 @@
     <link rel="stylesheet" href="../contact/contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="../contact/contact.js" async></script>
 </head>
 <body>
-    <header class="header">
-        <nav class="navbar">
+    <header class="header" role="banner">
+        <nav class="navbar" aria-label="Thanh điều hướng">
             <div class="logo">
-                <a href="#">Coffee Premium</a>
+            <a href="/" aria-label="Trang chủ">
+                <span class="mark">C</span>
+                <span>Coffee Premium</span>
+            </a>
             </div>
-            <ul class="nav-links">
+
+            <ul class="nav-links" role="menubar" aria-label="Liên kết chính">
+                <li><a href="#" role="menuitem" aria-current="page">Trang chủ</a></li>
+                <li><a href="#" role="menuitem">Giới thiệu</a></li>
+                <li><a href="#" role="menuitem">Sản phẩm</a></li>
+                <li><a href="#" role="menuitem">Tin tức</a></li>
+                <li><a href="#" role="menuitem">Liên hệ</a></li>
+            </ul>
+
+            <div class="actions">
+                <div class="search-wrap">
+                    <button id="searchToggle" class="search-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="searchPopover" title="Tìm kiếm ( / )">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                
+                <button id="accountBtn" class="btn" type="button">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Tài khoản</span>
+                </button>
+
+                <div id="accountPopup" class="popup">
+                    <div class="popup-content">
+                        <span class="close-btn" id="closePopup">&times;</span>
+                        <h2>Đăng nhập</h2>
+                        <form>
+                            <input type="text" placeholder="Email" required>
+                            <input type="password" placeholder="Mật khẩu" required>
+                            <button type="submit">Đăng nhập</button>
+                            <p>Chưa có tài khoản? 
+                                <a href="#" id="showRegister">Đăng ký</a>
+                            </p>
+                        </form>
+                    </div>
+                    <div id="registerForm" style="display:none;">
+                        <h2>Đăng ký</h2>
+                        <input type="text" placeholder="Họ và tên" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Mật khẩu" required>
+                        <button>Đăng ký</button>
+                        <p>Đã có tài khoản? 
+                            <a href="#" id="showLogin">Đăng nhập</a>
+                        </p>
+                    </div>
+                </div>
+
+                <button class="btn cart" type="button" aria-label="Giỏ hàng">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </button>
+
+                <button id="menuToggle" class="menu-toggle" aria-label="Mở menu" aria-expanded="false" aria-controls="mobilePanel">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="searchPopover" class="search-popover" role="dialog" aria-modal="true" aria-label="Tìm kiếm sản phẩm">
+            <div class="search-row">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input id="searchInput" class="search-input" type="text" placeholder="Tìm kiếm sản phẩm, bài viết..." />
+                <span class="kbd">/</span>
+                <div class="search-actions">
+                    <button id="searchSubmit" class="btn" type="button">Tìm</button>
+                    <button id="searchClose" class="search-close" type="button" aria-label="Đóng tìm kiếm">
+                    <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobilePanel" class="mobile-panel" aria-label="Menu di động">
+            <ul class="mobile-links">
                 <li><a href="#">Trang chủ</a></li>
                 <li><a href="#">Giới thiệu</a></li>
                 <li><a href="#">Sản phẩm</a></li>
                 <li><a href="#">Tin tức</a></li>
                 <li><a href="#">Liên hệ</a></li>
             </ul>
-            <div class="actions">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Tìm kiếm sản phẩm...">
-                </div>
-                <button class="btn">
-                    <i class="fa-regular fa-user"></i>
-                    Tài khoản
-                </button>
-                <button class="btn">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">2</span>
-                </button>
+            <div class="mobile-cta">
+                <button class="btn" type="button">Đăng nhập</button>
+                <button class="btn" type="button" style="background:#fff8f0">Đăng ký</button>
             </div>
-        </nav>  
+        </div>
     </header>
 
     <section class="contact-section">
         <div class="contact-header">
             <h2>Liên hệ với chúng tôi</h2>
             <p>Hãy để lại thông tin để chúng tôi có thể hỗ trợ bạn một cách tốt nhất</p>
-        </div>
-
-        <div class="contact-cards">
-            <div class="contact-card">
-            <i class="fa-solid fa-location-dot"></i>
-            <h4>Địa chỉ</h4>
-            <p><strong>123 Đường Nguyễn Huệ,<br>Quận 1, TP.HCM</strong></p>
-            <small>Văn phòng chính</small>
-            </div>
-
-            <div class="contact-card">
-            <i class="fa-solid fa-phone"></i>
-            <h4>Điện thoại</h4>
-            <p><strong>0123 456 789</strong></p>
-            <small>Hotline hỗ trợ 24/7</small>
-            </div>
-
-            <div class="contact-card">
-            <i class="fa-solid fa-envelope"></i>
-            <h4>Email</h4>
-            <p><strong>info@coffeepremium.com</strong></p>
-            <small>Email chính thức</small>
-            </div>
-
-            <div class="contact-card">
-            <i class="fa-solid fa-clock"></i>
-            <h4>Giờ làm việc</h4>
-            <p><strong>8:00 - 18:00</strong></p>
-            <small>Thứ 2 - Chủ nhật</small>
-            </div>
         </div>
 
         <div class="contact-form-section">
@@ -84,24 +120,24 @@
                     <div class="form-group-row">
                         <div class="form-group">
                             <label for="fullName">Họ và tên *</label>
-                            <input type="text" id="fullName" placeholder="Nhập họ và tên">
+                            <input type="text" id="fullName" placeholder="Nhập họ và tên" required>
                         </div>
                         <div class="form-group">
                             <label for="phoneNumber">Số điện thoại</label>
-                            <input type="tel" id="phoneNumber" placeholder="Nhập số điện thoại">
+                            <input type="tel" id="phoneNumber" placeholder="Nhập số điện thoại" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input type="email" id="email" placeholder="Nhập địa chỉ email">
+                        <input type="email" id="email" placeholder="Nhập địa chỉ email" required>
                     </div>
                     <div class="form-group">
                         <label for="subject">Chủ đề</label>
-                        <input type="text" id="subject" placeholder="Nhập chủ đề">
+                        <input type="text" id="subject" placeholder="Nhập chủ đề" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Nội dung *</label>
-                        <textarea id="message" placeholder="Nhập nội dung tin nhắn..."></textarea>
+                        <textarea id="message" placeholder="Nhập nội dung tin nhắn..." required></textarea>
                     </div>
                     <button type="submit" class="submit-button">
                         <i class="fas fa-envelope"></i>
@@ -112,7 +148,7 @@
             <div class="right-side">    
                 <div class="section-header2">
                     <h2>Tìm chúng tôi tại</h2>
-                    <div class="map-container"> <img src="../images/imagebgrs_contact.jpg" alt="Ảnh nền" class="map-background-img"/>
+                    <div class="map-container"> <img src="../images/coffeeadr.jpg" alt="Ảnh nền" class="map-background-img"/>
                         <div class="map-placeholder">
                             <div class="map-info">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -123,59 +159,33 @@
                     </div>
                 </div>
                 <div class="section-header3">
-                    <h3>Cửa hàng của chúng tôi</h3>
-                    <p>Ghé thăm các cửa hàng Coffee Premium</p>
-                    <div class="store-list">
-                        <div class="store-item">
-                            <h4>Coffee Premium - Nguyễn Huệ</h4>
-                            <p><i class="fas fa-map-marker-alt"></i> 123 Đường Nguyễn Huệ, Quận 1, TP.HCM</p>
-                            <p><i class="fas fa-phone-alt"></i> 0123 456 789</p>
-                            <p><i class="fas fa-clock"></i> 6:00 - 22:00</p>
-                            <span class="flagship-tag">Flagship Store</span>
+                    <div class="first-section">
+                        <h3>Câu hỏi thường gặp</h3>
+                        <p>Những câu hỏi phổ biến từ khách hàng</p>
+                    </div>
+
+                    <div class="ques-section">
+                        <div class="ques-item">
+                            <h4>Làm thế nào để đặt hàng online?</h4>
+                            <p>Bạn có thể dễ dàng đặt hàng qua website hoặc gọi điện trực tiếp đến hotline của chúng tôi.</p>
                         </div>
-                        <div class="store-item">
-                            <h4>Coffee Premium - Đống Đa</h4>
-                            <p><i class="fas fa-map-marker-alt"></i> 456 Đường Đống Đa, Quận 1, TP.HCM</p>
-                            <p><i class="fas fa-phone-alt"></i> 0123 456 790</p>
-                            <p><i class="fas fa-clock"></i> 7:00 - 21:00</p>
-                            <span class="shop">Cửa hàng</span>
+                        <div class="ques-item">
+                            <h4>Thời gian giao hàng là bao lâu?</h4>
+                            <p>Chúng tôi giao hàng trong vòng 1-2 ngày làm việc tại TP.HCM và 2-5 ngày cho các tỉnh khác.</p>
                         </div>
-                        <div class="store-item">
-                            <h4>Coffee Premium - Tân Bình</h4>
-                            <p><i class="fas fa-map-marker-alt"></i> 456 Đường Đống Đa, Quận 1, TP.HCM</p>
-                            <p><i class="fas fa-phone-alt"></i> 0123 456 791</p>
-                            <p><i class="fas fa-clock"></i> 6:30 - 22:30</p>
-                            <span class="shop">Cửa hàng</span>
+                        <div class="ques-item">
+                            <h4>Có chính sách đổi trả không?</h4>
+                            <p>Chúng tôi hỗ trợ đổi trả trong vòng 7 ngày nếu sản phẩm có lỗi từ nhà sản xuất.</p>
+                        </div>
+                        <div class="ques-item">
+                            <h4>Có ship toàn quốc không?</h4>
+                            <p>Có, chúng tôi giao hàng toàn quốc với phí ship hợp lý.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="question-form-section">
-            <div class="first-section">
-                <h3>Câu hỏi thường gặp</h3>
-                <p>Những câu hỏi phổ biến từ khách hàng</p>
-            </div>
-
-            <div class="ques-section">
-                <div class="ques-item">
-                    <h4>Làm thế nào để đặt hàng online?</h4>
-                    <p>Bạn có thể dễ dàng đặt hàng qua website hoặc gọi điện trực tiếp đến hotline của chúng tôi.</p>
-                </div>
-                <div class="ques-item">
-                    <h4>Thời gian giao hàng là bao lâu?</h4>
-                    <p>Chúng tôi giao hàng trong vòng 1-2 ngày làm việc tại TP.HCM và 2-5 ngày cho các tỉnh khác.</p>
-                </div>
-                <div class="ques-item">
-                    <h4>Có chính sách đổi trả không?</h4>
-                    <p>Chúng tôi hỗ trợ đổi trả trong vòng 7 ngày nếu sản phẩm có lỗi từ nhà sản xuất.</p>
-                </div>
-                <div class="ques-item">
-                    <h4>Có ship toàn quốc không?</h4>
-                    <p>Có, chúng tôi giao hàng toàn quốc với phí ship hợp lý.</p>
-                </div>
-            </div>
-        </div>
+        
         <div class="support-section">
                 <h3 class="support-title">Cần hỗ trợ khẩn cấp?</h3>
                 <p class="support-subtitle">Gọi ngay hotline để được hỗ trợ nhanh chóng</p>
