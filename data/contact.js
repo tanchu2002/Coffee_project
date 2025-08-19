@@ -8,8 +8,9 @@ const searchSubmit = document.getElementById('searchSubmit');
 const accountBtn = document.getElementById("accountBtn");
 const accountPopup = document.getElementById("accountPopup");
 const closePopup = document.getElementById("closePopup");
-const loginForm = document.getElementById("loginForm");
-const registerForm = document.getElementById("registerForm");
+const closePopup2 = document.getElementById("closePopup2");
+const loginForm = document.querySelector(".loginForm");
+const registerForm = document.querySelector(".registerForm");
 const showRegister = document.getElementById("showRegister");
 const showLogin = document.getElementById("showLogin");
 
@@ -84,7 +85,7 @@ if (e.key === 'Escape') {
 }
 });
 
-
+// mobile
 let lastW = window.innerWidth;
 window.addEventListener('resize', () => {
 const w = window.innerWidth;
@@ -101,22 +102,26 @@ searchClose.addEventListener('click', closeSearch);
 // login form
 accountBtn.addEventListener("click", () => {
     accountPopup.style.display = "flex";
-    loginForm.style.display = "block";
-    registerForm.style.display = "none";
+    loginForm.classList.add("active");      // hiện login
+    registerForm.classList.remove("active"); // ẩn register
 });
 
 closePopup.addEventListener("click", () => {
     accountPopup.style.display = "none";
 });
 
+closePopup2.addEventListener("click", () => {
+    accountPopup.style.display = "none";
+});
+
 showRegister.addEventListener("click", (e) => {
     e.preventDefault();
-    loginForm.style.display = "none";
-    registerForm.style.display = "block";
+    loginForm.classList.remove("active");   // ẩn login
+    registerForm.classList.add("active");   // hiện register
 });
 
 showLogin.addEventListener("click", (e) => {
     e.preventDefault();
-    loginForm.style.display = "block";
-    registerForm.style.display = "none";
+    loginForm.classList.add("active");      // hiện login
+    registerForm.classList.remove("active");// ẩn register
 });

@@ -15,7 +15,7 @@
 }
 
 html,body {
-    margin: 0;
+    margin: 0px;
     font: 500 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif; color:var(--t); 
     background: var(--bg);
 }
@@ -27,11 +27,11 @@ a {
 
 .header{
     width: 100%;
-    /* margin-top: -70px; */
+    margin-top: -70px;
     position: sticky; 
     top: 0; 
     z-index: 50;
-    background: rgba(255,255,255,0.78);
+    background: #f1e7dcb2;
     backdrop-filter: blur(10px);
 }
 
@@ -52,19 +52,6 @@ a {
     display: flex; 
     align-items: center; 
     gap: 10px;
-}
-
-.logo .mark {
-    display: inline-grid; 
-    place-items: center;
-    width: 28px; 
-    height: 28px; 
-    border-radius: 8px;
-    background: linear-gradient(180deg, #caa37a, #9a6a3d);
-    color: #fff; 
-    font-weight: 900; 
-    font-size: 14px;
-    box-shadow: 0 1px 0 rgba(0,0,0,.06) inset;
 }
 
 .nav-links {
@@ -295,22 +282,32 @@ a {
 .popup {
     display: none;
     position: fixed;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
     top: 0; 
     left: 0;
     width: 100vw; 
     height: 100vh;
-    background: rgba(87, 85, 85, 0.5);
-    justify-content: center; align-items: center;
     z-index: 999;
 }
 
 .popup-content {
     background: #fff;
     padding: 20px;
-    border-radius: 12px;
     width: 300px;
-    text-align: center;
+    border-radius: 10px;
     position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .popup-content input {
@@ -331,11 +328,34 @@ a {
     width: 100%;
 }
 
-.close-btn {
-    position: absolute;
-    top: 10px; right: 15px;
-    font-size: 24px;
-    cursor: pointer;
+.form {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.form.active {
+  display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.form h2 {
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.login-form,
+.register-form {
+  display: none;
+}
+
+.login-form.active,
+.register-form.active {
+  display: block;
 }
 
 @keyframes popupFade {

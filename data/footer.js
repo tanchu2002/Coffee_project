@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOOTER</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../footer/footer.css">
-</head>
-<body>
-    <footer class="main-footer">
+async function Footer() {
+    const footerHTML = `
         <div class="footer-content">
             <div class="footer-col about-us">
                 <h4>Coffee Premium</h4>
@@ -57,6 +48,11 @@
         <div class="footer-bottom">
             <p>&copy; 2024 Coffee Premium. Tất cả quyền được bảo lưu.</p>
         </div>
-    </footer>
-</body>
-</html>
+    `;
+console.log(footerHTML);
+const foots = document.getElementsByClassName("foot-component");// array
+    for(var i=0;i<foots.length;i++){
+        foots[i].innerHTML = footerHTML;
+    }
+}
+Footer();

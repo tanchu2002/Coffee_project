@@ -9,101 +9,10 @@
     <link rel="stylesheet" href="../contact/contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <script src="../contact/contact.js" async></script>
 </head>
 <body>
-    <header class="header" role="banner">
-        <nav class="navbar" aria-label="Thanh điều hướng">
-            <div class="logo">
-            <a href="/" aria-label="Trang chủ">
-                <span class="mark">C</span>
-                <span>Coffee Premium</span>
-            </a>
-            </div>
-
-            <ul class="nav-links" role="menubar" aria-label="Liên kết chính">
-                <li><a href="#" role="menuitem" aria-current="page">Trang chủ</a></li>
-                <li><a href="#" role="menuitem">Giới thiệu</a></li>
-                <li><a href="#" role="menuitem">Sản phẩm</a></li>
-                <li><a href="#" role="menuitem">Tin tức</a></li>
-                <li><a href="#" role="menuitem">Liên hệ</a></li>
-            </ul>
-
-            <div class="actions">
-                <div class="search-wrap">
-                    <button id="searchToggle" class="search-toggle" aria-haspopup="dialog" aria-expanded="false" aria-controls="searchPopover" title="Tìm kiếm ( / )">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </div>
-                
-                <button id="accountBtn" class="btn" type="button">
-                    <i class="fa-regular fa-user"></i>
-                    <span>Tài khoản</span>
-                </button>
-
-                <div id="accountPopup" class="popup">
-                    <div class="popup-content">
-                        <span class="close-btn" id="closePopup">&times;</span>
-                        <h2>Đăng nhập</h2>
-                        <form>
-                            <input type="text" placeholder="Email" required>
-                            <input type="password" placeholder="Mật khẩu" required>
-                            <button type="submit">Đăng nhập</button>
-                            <p>Chưa có tài khoản? 
-                                <a href="#" id="showRegister">Đăng ký</a>
-                            </p>
-                        </form>
-                    </div>
-                    <div id="registerForm" style="display:none;">
-                        <h2>Đăng ký</h2>
-                        <input type="text" placeholder="Họ và tên" required>
-                        <input type="email" placeholder="Email" required>
-                        <input type="password" placeholder="Mật khẩu" required>
-                        <button>Đăng ký</button>
-                        <p>Đã có tài khoản? 
-                            <a href="#" id="showLogin">Đăng nhập</a>
-                        </p>
-                    </div>
-                </div>
-
-                <button class="btn cart" type="button" aria-label="Giỏ hàng">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart-count">0</span>
-                </button>
-
-                <button id="menuToggle" class="menu-toggle" aria-label="Mở menu" aria-expanded="false" aria-controls="mobilePanel">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-
-        <div id="searchPopover" class="search-popover" role="dialog" aria-modal="true" aria-label="Tìm kiếm sản phẩm">
-            <div class="search-row">
-                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-                <input id="searchInput" class="search-input" type="text" placeholder="Tìm kiếm sản phẩm, bài viết..." />
-                <span class="kbd">/</span>
-                <div class="search-actions">
-                    <button id="searchSubmit" class="btn" type="button">Tìm</button>
-                    <button id="searchClose" class="search-close" type="button" aria-label="Đóng tìm kiếm">
-                    <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div id="mobilePanel" class="mobile-panel" aria-label="Menu di động">
-            <ul class="mobile-links">
-                <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Sản phẩm</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
-            <div class="mobile-cta">
-                <button class="btn" type="button">Đăng nhập</button>
-                <button class="btn" type="button" style="background:#fff8f0">Đăng ký</button>
-            </div>
-        </div>
+    <header class="header head-component" role="banner">
+        
     </header>
 
     <section class="contact-section">
@@ -200,55 +109,12 @@
         </div>
     </section>
 
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-col about-us">
-                <h4>Coffee Premium</h4>
-                <p>Cà phê chất lượng cao, rang xay tươi mỗi ngày. Mang đến cho bạn trải nghiệm cà phê tuyệt vời nhất.</p>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="footer-col quick-links">
-                <h4>Liên kết nhanh</h4>
-                <ul>
-                    <li><a href="#">Trang chủ</a></li>
-                    <li><a href="#">Sản phẩm</a></li>
-                    <li><a href="#">Giới thiệu</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Liên hệ</a></li>
-                </ul>
-            </div>
-            <div class="footer-col customer-support">
-                <h4>Hỗ trợ khách hàng</h4>
-                <ul>
-                    <li><a href="#">Chính sách giao hàng</a></li>
-                    <li><a href="#">Chính sách đổi trả</a></li>
-                    <li><a href="#">Chính sách bảo mật</a></li>
-                    <li><a href="#">Điều khoản sử dụng</a></li>
-                    <li><a href="#">Câu hỏi thường gặp</a></li>
-                </ul>
-            </div>
-            <div class="footer-col newsletter">
-                <h4>Nhận bản tin</h4>
-                <p>Đăng ký để nhận thông tin và sản phẩm mới nhất.</p>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Email của bạn">
-                    <button type="submit" class="subscribe-button">Đăng ký</button>
-                    </div>
-                <div class="contact-info">
-                    <p><i class="fas fa-phone-alt"></i> 0123 456 789</p>
-                    <p><i class="fas fa-envelope"></i> info@coffeepremium.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận 1, TP.HCM</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Coffee Premium. Tất cả quyền được bảo lưu.</p>
-        </div>
+    <footer class="main-footer foot-component">
+        
     </footer>
+
+    <script src="../data/contact.js" async></script>
+    <script src="../data/header.js" async></script>
+    <script src="../data/footer.js" async></script>
 </body>
 </html>
