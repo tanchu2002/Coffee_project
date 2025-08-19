@@ -1,14 +1,25 @@
 * {
-    margin: none;
-    padding: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 300ms;
 }
 
-body, html {
-    margin: none;
-    padding: none;
+html, body {
     background-color: rgba(250, 248, 245, 1);
-    font: 500 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif; color:var(--t); 
-    background: var(--bg);
+    font-size: 14px;
+    font: 500 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif; color:var(--t);
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: lightblue;
 }
 
 img {
@@ -16,115 +27,130 @@ img {
 }
 
 p {
-    margin: 0;
+    margin: 10px;
     padding: 0;
 }
 
-/* Layout adjustment */
-#main {
-    width: 100%;
-}
+/* Layout set up */
 
-.layout-container {
-    float: none;
-    margin: 0 auto;
-    padding: 10px;
+.container {        /* Desktop view */
     display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    grid-template-areas: 
+    grid-template-columns: 1fr 10fr 1fr;
+    height: auto;
+    grid-template-areas:
     "header         header          header"
-    "aside-left     section-main    aside-right"
-    "aside-left     section-main    aside-right"
+    "aside-left     main-content    aside-right"
+    "aside-left     main-content    aside-right"
     "footer         footer          footer";
+    row-gap: 10px;
+    float: none;
+    margin: auto 0;
 }
 
-/* Mobile layout adjustment */
-@media (max-width: 800px) {
-    .layout-container {
+/* Layout for mobile view */
+@media (max-width: 850px) {
+    .container {
+        grid-template-rows: 20px;
         grid-template-columns: 1fr;
-        grid-template-areas: 
+        grid-template-areas:
         "header"
         "aside-left"
-        "section-main"
+        "main-content"
         "aside-right"
         "footer";
     }
 }
 
+/* Content set up
+
+Aside left, right and content */
+
 .aside-left {
     float: left;
-    margin-right: 5px;
-    justify-content: center;
+    width: auto;
+    margin-right: 10px;
 }
 
 .aside-right {
     float: right;
-    margin-left: 5px;
-    justify-content: center;
+    width: auto;
+    margin-left: 10px;
 }
 
-.section-main {
+.main-content {
     float: center;
-    width: 100%;
-    margin: 0;
-    padding: 0px 20px 0px 20px;
-    justify-content: center;
-    align-items: center;
+    width: 80%;
     background-color: lightpink;
+    padding: 20px;
 }
 
-/* Main content */
-
-.site-path {
-    display: flex;
-    justify-content: flex-start;
+.three-columns .main-content {
+    width: 100%;
 }
 
-.previous-site-path {
+/* Site path */
+.grey-site-path {
     font-size: 0.7rem;
-    color: rgba(125, 116, 116, 1);
-    margin-right: 2px;
+    margin: 0px 0px 20px 0px;   /* Margin bottom of 20px */
 }
 
-.current-site-path {
+.strong-site-path {
     font-size: 0.7rem;
-    color: black;
+    margin: 0;
 }
 
-/* Current product container */
+/* Product gallery container */
 .product-gallery-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 30px;
+    flex: 1 1;
 }
 
-.main-product-image-container {
-
-}
-
-.main-product-image {
+/* Main product image */
+.main-image {
     border-radius: 10px;
     object-fit: cover;
-    width: 600px;
+    width: 700px;
     height: 400px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
 }
 
-.sub-product-images-container {
+/* Sub image container */
+.sub-images-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 600px;
-    width: auto;
+    margin-top: 10px;
 }
 
-.sub-product-images-container img {
-    object-fit: cover;
+@media (max-width: 650px) {
+    .sub-images-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 10px;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 550px) {
+    .sub-images-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10px;
+        justify-content: space-between;
+    }
+}
+
+.sub-images-container img {
     border-radius: 10px;
-    width: 130px;
-    height: 80px;
+    object-fit: cover;
+    width: 160px;
+    height: 75px;
     cursor: pointer;
+}
+
+.selected-sub-image {
+    border: 2px solid rgba(139, 69, 19, 1);
 }

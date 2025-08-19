@@ -7,60 +7,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <!-- CSS Files -->
-    <link rel="stylesheet" href="/header/header.css">
+    <link rel="stylesheet" href="/header/header.css">       <!-- Header CSS -->
+    <link rel="stylesheet" href="/footer/footer.css">       <!-- Footer CSS-->
     <link rel="stylesheet" href="/ProductDetail/css/product_detail.css">
 </head>
 <body>
     <!-- Header -->
-    <div class="head-component"></div>
+    <div id="head-component"></div>
 
-    <!-- Main content container -->
-    <main id="main">
-        <div class="layout-container">
-            <!-- Aside left layout -->
-            <aside class="aside-left">
-            </aside>
+    <!-- Main content -->
+    <main class="main">
+        <!-- Layout setting -->
+        <div class="container three-columns">   <!-- 3 columns container -->
+            <aside class="aside-left"></aside>  <!-- Aside left -->
 
-            <!-- Actual Main Content -->
-            <section class="section-main">
+            <!-- Actual main content -->
+            <section class="main-content">
                 <div class="site-path">
-                    <p class="previous-site-path">Trang chủ / Sản phẩm </p>
-                    <p class="current-site-path"> / Cà phê Arabica Ethiopia</p>
+                    <p class="grey-site-path">Trang chủ / sản phẩm <strong class="strong-site-path">/ Cà phê Arabica Ethiopia</strong></p>
                 </div>
 
+                <!-- Product gallery -->
                 <div class="product-gallery-container">
                     <div class="product-images-container">
-                        <!-- Main product image -->
-                        <div class="main-product-image-container js-main-image">
-                            <!-- <img class="main-product-image" src="/ProductDetail/assets/images/current-product-images/main-shot.avif" alt="Product image"> -->
+                        <div class="main-image-container">
+                            <img class="main-image" src="/ProductDetail/assets/images/current-product-images/main-shot.avif" alt="">
                         </div>
-                        
-                        <!-- Sub product images -->
-                        <div class="sub-product-images-container js-sub-images-gallery">
-                            <img class="sub-image js-sub-image" src="/ProductDetail/assets/images/current-product-images/main-shot.avif" alt="Product image">
-                            <img class="sub-image js-sub-image" src="/ProductDetail/assets/images/current-product-images/second-shot.avif" alt="Product image">
-                            <img class="sub-image js-sub-image" src="/ProductDetail/assets/images/current-product-images/third-shot.avif" alt="Product image">
-                            <img class="sub-image js-sub-image" src="/ProductDetail/assets/images/current-product-images/fourth-shot.avif" alt="Product image">
+
+                        <div class="sub-images-container">
+                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/main-shot.avif" alt="Sub image">
+                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/second-shot.avif" alt="Sub image">
+                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/third-shot.avif" alt="Sub image">
+                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/fourth-shot.avif" alt="Sub image">
                         </div>
                     </div>
 
-                    <div class="current-product-informations">
+                    <div class="product-informations-container">
 
                     </div>
                 </div>
             </section>
 
-            <!-- Aside right layout -->
-            <aside class="aside-right">
-            </aside>
+            <aside class="aside-right"></aside> <!-- Aside right -->
         </div>
     </main>
+
+    <div class="foot-component"></div>
     
     <!-- Header & Footer JavaScript -->
-    <script type="module" src="/header/header.js"></script>
+    <script src="/data/"></script>     <!-- Header -->
+    <!-- <script src="/data/footer.js"></script>     Footer -->
 
-    <!-- JavaScript files -->
-    <script src="/ProductDetail/js/product-image-select.js"></script>
-    <script src="/ProductDetail/js/product-gallery-render.js"></script>
+    <!-- Functional JavaScript -->
+    <script src="/ProductDetail/js/product-gallery.js"></script>
 </body>
 </html>
