@@ -31,6 +31,10 @@ p {
     padding: 0;
 }
 
+/* hr {
+    color: rgba(232, 219, 211, 1);
+} */
+
 /* Layout set up */
 
 .container {        /* Desktop view */
@@ -80,7 +84,6 @@ Aside left, right and content */
 .main-content {
     float: center;
     width: 80%;
-    background-color: lightpink;
     padding: 20px;
 }
 
@@ -103,13 +106,20 @@ Aside left, right and content */
 .product-gallery-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    column-gap: 50px;
     flex: 1 1;
 }
 
 /* Main product image */
+.main-image-container {
+    position: relative;
+    z-index: 1;
+}
+
 .main-image {
+    position: relative;
     border-radius: 10px;
     object-fit: cover;
     width: 700px;
@@ -124,7 +134,7 @@ Aside left, right and content */
     margin-top: 10px;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 1500px) {
     .sub-images-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -133,7 +143,7 @@ Aside left, right and content */
     }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 1400px) {
     .sub-images-container {
         display: grid;
         grid-template-rows: 1fr 1fr;
@@ -153,4 +163,325 @@ Aside left, right and content */
 
 .selected-sub-image {
     border: 2px solid rgba(139, 69, 19, 1);
+}
+
+/* Product badge */
+.product-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    width: 70px;
+    height: 20px;
+    font-size: 12px;
+    color: white;
+    background-color: rgba(139, 69, 19, 1);
+    border-radius: 7px;
+}
+
+/* Product informations container */
+.product-informations-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    float: left;
+}
+
+.product-informations-container h1 {
+    margin-top: -8px;
+    padding: none;
+}
+
+/* Product review container */
+.product-review-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 230px;
+}
+
+.bi-star-fill {
+    color: rgba(255, 192, 0, 1);
+}
+
+.bi-star {
+    color: rgba(214, 217, 221, 1);
+}
+
+.product-review {
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-review p {
+    margin: 4px 0px 0px 0px;    /* Margin top of 4px */
+    padding: 0;
+}
+
+/* Product price container */
+.product-price-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.product-pricing {
+    margin-right: 20px;
+}
+
+.product-final-price h2 {
+    color: rgba(139, 69, 19, 1);
+    font-weight: bold;
+}
+
+.product-discounted-price {
+    text-decoration: line-through;
+    opacity: 0.8;
+    font-size: 1rem;
+}
+
+.product-discounted-percent {
+    text-align: center;
+    background-color: rgba(216, 24, 57, 1);
+    width: 48px;
+    height: 20px;
+    font-size: 12px;
+    color: white;
+    border-radius: 6px;
+}
+
+.product-discounted-percent p {
+    margin: 0;
+    padding: 0;
+}
+
+.dividor {
+    color: rgba(232, 219, 211, 1);
+}
+
+/* Product description container */
+.product-description-container {
+    width: 650px;
+    margin-bottom: 20px;
+}
+
+.product-description-container h4 {
+    margin: 0px 0px 10px 0px;   /* Margin bottom of 10px */
+    padding: 0;
+}
+
+.product-description-container p {
+    opacity: 0.8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Specifications container */
+.specifications-container {
+    margin-bottom: 40px;
+}
+
+.specifications-list {
+    list-style-type: disc;
+    color: black;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-left: 20px;
+}
+
+.specifications-list li {
+    color: black;
+}
+
+.specifications-list li::marker {
+    color: rgba(139, 69, 19, 1);
+    font-size: 1.5rem;
+}
+
+/* Product quantity container */
+.product-quantity-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+/* Functional button container */
+.product-quantity-customize-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+.product-quantity-container h5 {
+    margin-top: 5px;
+}
+
+/* Minus and plus quantity button */
+.minus-button, .plus-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 40px;
+    height: 30px;
+    font-size: 22px;
+    background: transparent;
+    border: 1px solid rgba(232, 219, 211, 1);
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.minus-button:hover, .plus-button:hover {
+    background-color: rgba(230, 215, 192, 1);
+}
+
+.quantity-count {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background: transparent;
+    width: 30px;
+    border: none;
+    margin: 0px 30px 0px 30px;
+    padding: 0;
+}
+
+/* Styling the inactive button from JS className */
+.inactive-button {
+    opacity: 0.5;
+}
+
+/* Product CTA (Call to action) buttons container */
+.product-cta-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 650px;
+}
+
+/* Icons adjustment */
+.bi-cart {
+    color: white;
+}
+
+.bi-heart, .bi-share {
+    color: black;
+}
+
+.cta-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+/* Add to cart button */
+.add-to-cart-button {
+    background-color: rgba(139, 69, 19, 1);
+    color: white;
+    font-weight: bold;
+    width: 550px;
+    height: 35px;
+}
+
+.add-to-cart-button:hover {
+    opacity: 0.93;
+    transition: 300ms;
+}
+
+/* Like and share button container */
+.action-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+/* Like and share button */
+.like-button, .share-button {
+    border: 1px solid rgba(226, 210, 200, 1);
+    color: black;
+    width: 40px;
+    height: 35px;
+}
+
+.like-button:hover, .share-button:hover {
+    background-color: rgba(230, 215, 192, 1);
+    transition: 300ms;
+}
+
+.like-button:hover {
+    .bi-heart {
+        color: rgba(216, 24, 104, 1);
+    }
+}
+
+.like-button:active {
+    background-color: rgba(216, 24, 104, 1);
+    transition: 150ms;
+    .bi-heart {
+        color: white;
+        transition: 150ms;
+    }
+}
+
+.share-button:hover {
+    .bi-share {
+        color: blue;
+    }
+}
+
+.share-button:active {
+    background-color: rgba(82, 130, 243, 1);
+    transition: 150ms;
+    .bi-share {
+        color: white;
+        transition: 150ms;
+    }
+}
+
+/* Buy button container */
+.buy-button {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    background-color: rgba(212, 196, 160, 1);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    width: 650px;
+    height: 35px;
+    margin: 10px 0px 0px 0px;   /* Margin top of 10px */
+    padding: 0;
+}
+
+.buy-button:hover {
+    opacity: 0.87;
+    transition: 300ms;
+}
+
+.buy-button:active {
+    background-color: rgba(139, 69, 19, 1);
+    color: white;
+    transition: 100ms;
 }

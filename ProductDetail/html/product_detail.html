@@ -6,6 +6,7 @@
     <title>Product Details</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- CSS Files -->
     <link rel="stylesheet" href="/header/header.css">       <!-- Header CSS -->
     <link rel="stylesheet" href="/footer/footer.css">       <!-- Footer CSS-->
@@ -30,20 +31,126 @@
                 <!-- Product gallery -->
                 <div class="product-gallery-container">
                     <div class="product-images-container">
+                        
+                        <!-- Main image -->
                         <div class="main-image-container">
-                            <img class="main-image" src="/ProductDetail/assets/images/current-product-images/main-shot.avif" alt="">
+                            <img class="main-image" src="/ProductDetail/assets/images/current-product-images/main-shot.avif" alt="Product image">
+                            <div class="product-badge">Bán chạy</div>
                         </div>
 
+                        <!-- Sub images -->
                         <div class="sub-images-container">
-                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/main-shot.avif" alt="Sub image">
-                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/second-shot.avif" alt="Sub image">
-                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/third-shot.avif" alt="Sub image">
-                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/fourth-shot.avif" alt="Sub image">
+                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/main-shot.avif" alt="Product image">
+                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/second-shot.avif" alt="Product image">
+                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/third-shot.avif" alt="Product image">
+                            <img class="sub-image" src="/ProductDetail/assets/images/current-product-images/fourth-shot.avif" alt="Product image">
                         </div>
                     </div>
 
+                    <!-- Product informations container -->
                     <div class="product-informations-container">
+                        <h1>Cà phê Arabica Ethiopia</h1>
 
+                        <!-- Product review container -->
+                        <div class="product-review-container">
+                            <!-- Star rating -->
+                            <div class="product-stars">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star"></i>
+                            </div>
+
+                            <!-- Rating count -->
+                            <div class="product-review">
+                                <p>4.8 (124 đánh giá)</p>
+                            </div>
+                        </div>
+
+                        <!-- Product price container -->
+                        <div class="product-price-container">
+                        <!-- Final price -->
+                        <div class="product-pricing product-final-price">
+                            <h2>299.000đ</h2>
+                        </div>
+
+                        <!-- Discounted price -->
+                        <div class="product-pricing product-discounted-price">
+                            <p>350.000đ</p>
+                        </div>
+
+                        <!-- Discount percent -->
+                        <div class="product-pricing product-discounted-percent">
+                            <p>-15%</p>
+                        </div>
+                        </div>
+
+                        <hr>
+
+                        <!-- Product description container -->
+                        <div class="product-description-container">
+                        <h4>Mô tả sản phẩm</h4>
+                        <p>
+                            Cà phê Arabica Ethiopia đặc biệt với hương vị nhẹ nhàng, thanh mát và notes hoa quả tự nhiên. 
+                            Được trồng trên cao nguyên Ethiopia với độ cao 1500-2000m, mang đến trải nghiệm cà phê tinh tế và đậm đà.
+                        </p>
+                        </div>
+
+                        <!-- Product specifications container -->
+                        <div class="specifications-container">
+                        <h4>Đặc điểm nổi bật</h4>
+                        <ul class="specifications-list">
+                            <li>100% Arabica nguyên chất</li>
+                            <li>Rang tươi mỗi ngày</li>
+                            <li>Hương vị hoa quả thiên nhiên</li>
+                            <li>Độ caffeine vừa phải</li>
+                            <li>Phù hợp pha phin, espresso</li>
+                        </ul>
+                        </div>
+
+                        <hr>
+
+                        <!-- Product quantity container -->
+                        <div class="product-quantity-container">
+                        <h5>Số lượng: </h5>
+
+                        <!-- Quantity adjustment function button container -->
+                        <div class="product-quantity-customize-container">
+                            <!-- Functional buttons -->
+                            <button class="minus-button js-minus-button">-</button>
+                            <input type="number" class="quantity-count js-quantity-count" value="1" min = "1" max = "10"/>
+                            <button class="plus-button js-plus-button">+</button>
+                        </div>
+                        </div>
+
+                        <!-- Call to action buttons container -->
+                        <div class="product-cta-buttons-container">
+
+                            <!-- Add to cart button -->
+                            <div class="add-to-cart-button-container">
+                                <button class="cta-button add-to-cart-button"><i class="bi bi-cart"></i> <p>Thêm vào giỏ</p></button>
+                            </div>
+                            
+                            <!-- Action button container -->
+                            <div class="action-buttons-container">
+
+                                <!-- Like button -->
+                                <div class="like-button-container">
+                                    <button class="cta-button like-button"><i class="bi bi-heart"></i></button>
+                                </div>
+
+                                <!-- Share button -->
+                                <div class="share-button-container">
+                                    <button class="cta-button share-button"><i class="bi bi-share"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buy button container -->
+                        <div class="buy-button-container">
+                            <button class="buy-button">Mua ngay</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -55,10 +162,11 @@
     <div class="foot-component"></div>
     
     <!-- Header & Footer JavaScript -->
-    <script src="/data/"></script>     <!-- Header -->
-    <!-- <script src="/data/footer.js"></script>     Footer -->
+    <script src="/data/header.js"></script>     <!-- Header -->
+    <script src="/data/footer.js"></script>     <!-- Footer -->
 
     <!-- Functional JavaScript -->
     <script src="/ProductDetail/js/product-gallery.js"></script>
+    <script src="/ProductDetail/js/quantity-adjustment.js"></script>
 </body>
 </html>
