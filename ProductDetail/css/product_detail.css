@@ -1,0 +1,130 @@
+* {
+    margin: none;
+    padding: none;
+}
+
+body, html {
+    margin: none;
+    padding: none;
+    background-color: rgba(250, 248, 245, 1);
+    font: 500 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif; color:var(--t); 
+    background: var(--bg);
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout adjustment */
+#main {
+    width: 100%;
+}
+
+.layout-container {
+    float: none;
+    margin: 0 auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-areas: 
+    "header         header          header"
+    "aside-left     section-main    aside-right"
+    "aside-left     section-main    aside-right"
+    "footer         footer          footer";
+}
+
+/* Mobile layout adjustment */
+@media (max-width: 800px) {
+    .layout-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "aside-left"
+        "section-main"
+        "aside-right"
+        "footer";
+    }
+}
+
+.aside-left {
+    float: left;
+    margin-right: 5px;
+    justify-content: center;
+}
+
+.aside-right {
+    float: right;
+    margin-left: 5px;
+    justify-content: center;
+}
+
+.section-main {
+    float: center;
+    width: 100%;
+    margin: 0;
+    padding: 0px 20px 0px 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: lightpink;
+}
+
+/* Main content */
+
+.site-path {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.previous-site-path {
+    font-size: 0.7rem;
+    color: rgba(125, 116, 116, 1);
+    margin-right: 2px;
+}
+
+.current-site-path {
+    font-size: 0.7rem;
+    color: black;
+}
+
+/* Current product container */
+.product-gallery-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.main-product-image-container {
+
+}
+
+.main-product-image {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 600px;
+    height: 400px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.sub-product-images-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    width: auto;
+}
+
+.sub-product-images-container img {
+    object-fit: cover;
+    border-radius: 10px;
+    width: 130px;
+    height: 80px;
+    cursor: pointer;
+}
