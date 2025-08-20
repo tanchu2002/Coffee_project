@@ -31,9 +31,12 @@ p {
     padding: 0;
 }
 
-/* hr {
-    color: rgba(232, 219, 211, 1);
-} */
+hr {
+    border: none;
+    height: 1px;
+    color: black;
+    background-color: black;
+}
 
 /* Layout set up */
 
@@ -84,7 +87,7 @@ Aside left, right and content */
 }
 
 .main-content {
-    float: center;
+    float: left;
     width: 80%;
     padding: 20px;
 }
@@ -136,6 +139,7 @@ Aside left, right and content */
     margin-top: 10px;
 }
 
+/* Screen shrink adjustment for product images gallery */
 @media (max-width: 1550px) {
     .sub-images-container {
         display: grid;
@@ -191,6 +195,7 @@ Aside left, right and content */
     }
 }
 
+/* Sub images container */
 .sub-images-container img {
     border-radius: 10px;
     object-fit: cover;
@@ -267,7 +272,7 @@ Aside left, right and content */
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .product-pricing {
@@ -300,10 +305,6 @@ Aside left, right and content */
     padding: 0;
 }
 
-.dividor {
-    color: rgba(232, 219, 211, 1);
-}
-
 /* Product description container */
 .product-description-container {
     width: 650px;
@@ -323,7 +324,7 @@ Aside left, right and content */
 
 /* Specifications container */
 .specifications-container {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .specifications-list {
@@ -520,6 +521,7 @@ Aside left, right and content */
     transition: 100ms;
 }
 
+/* Screen shrink adjustment for the product informations container */
 @media (max-width: 1450px) {
     .product-description-container {
         width: 450px;
