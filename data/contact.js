@@ -8,9 +8,8 @@ const searchSubmit = document.getElementById('searchSubmit');
 const accountBtn = document.getElementById("accountBtn");
 const accountPopup = document.getElementById("accountPopup");
 const closePopup = document.getElementById("closePopup");
-const closePopup2 = document.getElementById("closePopup2");
-const loginForm = document.querySelector(".loginForm");
-const registerForm = document.querySelector(".registerForm");
+const loginForm = document.querySelector(".login-form");
+const registerForm = document.querySelector(".register-form");
 const showRegister = document.getElementById("showRegister");
 const showLogin = document.getElementById("showLogin");
 
@@ -99,29 +98,35 @@ if (w !== lastW) {
 
 searchClose.addEventListener('click', closeSearch);
 
-// login form
-accountBtn.addEventListener("click", () => {
-    accountPopup.style.display = "flex";
-    loginForm.classList.add("active");      // hiện login
-    registerForm.classList.remove("active"); // ẩn register
-});
+// Mở popup mặc định ở login
+    accountBtn.addEventListener("click", () => {
+        accountPopup.style.display = "flex";
+        loginForm.classList.add("active");
+        registerForm.classList.remove("active");
+    });
 
-closePopup.addEventListener("click", () => {
-    accountPopup.style.display = "none";
-});
+    // Đóng popup
+    closePopup.addEventListener("click", () => {
+        accountPopup.style.display = "none";
+    });
 
-closePopup2.addEventListener("click", () => {
-    accountPopup.style.display = "none";
-});
+    // Chuyển sang form Đăng ký
+    showRegister.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginForm.classList.remove("active");
+        registerForm.classList.add("active");
+    });
 
-showRegister.addEventListener("click", (e) => {
-    e.preventDefault();
-    loginForm.classList.remove("active");   // ẩn login
-    registerForm.classList.add("active");   // hiện register
-});
+    // Chuyển sang form Đăng nhập
+    showLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        registerForm.classList.remove("active");
+        loginForm.classList.add("active");
+    });
 
-showLogin.addEventListener("click", (e) => {
-    e.preventDefault();
-    loginForm.classList.add("active");      // hiện login
-    registerForm.classList.remove("active");// ẩn register
+    // Click ngoài popup thì tắt
+    window.addEventListener("click", (e) => {
+        if (e.target === accountPopup) {
+            accountPopup.style.display = "none";
+        }
 });
