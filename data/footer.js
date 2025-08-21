@@ -49,7 +49,7 @@ async function Footer() {
             <p>&copy; 2024 Coffee Premium. Tất cả quyền được bảo lưu.</p>
         </div>
     `;
-console.log(footerHTML);
+
 const foots = document.getElementsByClassName("foot-component");
     for(var i = 0; i < foots.length; i ++){
         foots[i].innerHTML = footerHTML;

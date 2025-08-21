@@ -92,7 +92,7 @@ async function Header() {
             </div>
         </div>
     `;
-console.log(headerHTML);
+
 const heads = document.getElementsByClassName("head-component");
     for(var i = 0 ; i < heads.length; i ++) {
         heads[i].innerHTML = headerHTML;
