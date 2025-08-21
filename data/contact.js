@@ -8,8 +8,8 @@ const searchSubmit = document.getElementById('searchSubmit');
 const accountBtn = document.getElementById("accountBtn");
 const accountPopup = document.getElementById("accountPopup");
 const closePopup = document.getElementById("closePopup");
-const loginForm = document.getElementById("loginForm");
-const registerForm = document.getElementById("registerForm");
+const loginForm = document.querySelector(".login-form");
+const registerForm = document.querySelector(".register-form");
 const showRegister = document.getElementById("showRegister");
 const showLogin = document.getElementById("showLogin");
 
@@ -84,7 +84,7 @@ if (e.key === 'Escape') {
 }
 });
 
-
+// mobile
 let lastW = window.innerWidth;
 window.addEventListener('resize', () => {
 const w = window.innerWidth;
@@ -98,25 +98,35 @@ if (w !== lastW) {
 
 searchClose.addEventListener('click', closeSearch);
 
-// login form
-accountBtn.addEventListener("click", () => {
-    accountPopup.style.display = "flex";
-    loginForm.style.display = "block";
-    registerForm.style.display = "none";
-});
+// Mở popup mặc định ở login
+    accountBtn.addEventListener("click", () => {
+        accountPopup.style.display = "flex";
+        loginForm.classList.add("active");
+        registerForm.classList.remove("active");
+    });
 
-closePopup.addEventListener("click", () => {
-    accountPopup.style.display = "none";
-});
+    // Đóng popup
+    closePopup.addEventListener("click", () => {
+        accountPopup.style.display = "none";
+    });
 
-showRegister.addEventListener("click", (e) => {
-    e.preventDefault();
-    loginForm.style.display = "none";
-    registerForm.style.display = "block";
-});
+    // Chuyển sang form Đăng ký
+    showRegister.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginForm.classList.remove("active");
+        registerForm.classList.add("active");
+    });
 
-showLogin.addEventListener("click", (e) => {
-    e.preventDefault();
-    loginForm.style.display = "block";
-    registerForm.style.display = "none";
+    // Chuyển sang form Đăng nhập
+    showLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        registerForm.classList.remove("active");
+        loginForm.classList.add("active");
+    });
+
+    // Click ngoài popup thì tắt
+    window.addEventListener("click", (e) => {
+        if (e.target === accountPopup) {
+            accountPopup.style.display = "none";
+        }
 });
