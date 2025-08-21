@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/footer/footer.css">       <!-- Footer CSS-->
     <link rel="stylesheet" href="/ProductDetail/css/product_detail.css">
     <link rel="stylesheet" href="/ProductDetail/css/screen_shrink.css">
+    <link rel="stylesheet" href="/ProductDetail//css/animation.css">
 </head>
 <body>
     <!-- Header -->
@@ -31,7 +32,7 @@
 
                 <!-- Product gallery -->
                 <div class="product-gallery-container">
-                    <div class="product-images-container">
+                    <div class="product-images-container images-container-animation">
                         
                         <!-- Main image -->
                         <div class="main-image-container">
@@ -49,7 +50,7 @@
                     </div>
 
                     <!-- Product informations container -->
-                    <div class="product-informations-container">
+                    <div class="product-informations-container informations-container-animation">
                         <h1>Cà phê Arabica Ethiopia</h1>
 
                         <!-- Product review container -->
@@ -126,9 +127,9 @@
 
                             <!-- Add to cart button -->
                             <div class="add-to-cart-button-container">
-                                <button class="cta-button add-to-cart-button">
-                                    <i class="bi bi-cart"></i>
-                                    <span>Thêm vào giỏ</span>
+                                <button class="cta-button add-to-cart-button js-add-to-cart-button">
+                                    <i class="bi bi-cart cart-icon"></i>
+                                    <span class="add-to-cart-text">Thêm vào giỏ</span>
                                 </button>
                             </div>
                             
@@ -151,6 +152,69 @@
                         <div class="buy-button-container">
                             <button class="buy-button">Mua ngay</button>
                         </div>
+
+                        <!-- Commitment container -->
+                        <div class="commitment-container">
+                            <!-- Free delivery -->
+                            <div class="free-delivery-container commitment-icon-container">
+                                <i class="bi bi-truck commitment-icon"></i>
+                                <p>Giao hàng miễn phí</p>
+                            </div>
+
+                            <!-- High quality guarantee -->
+                            <div class="guarantee-container commitment-icon-container">
+                                <i class="bi bi-shield commitment-icon"></i>
+                                <p>Bảo hành chất lượng</p>
+                            </div>
+
+                            <!-- Easey return -->
+                            <div class="easy-return-container commitment-icon-container">
+                                <i class="bi bi-arrow-left-circle commitment-icon"></i>
+                                <p>Đổi trả dễ dàng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product tabs container (Detailed description, specifications, reviews) -->
+                <div class="product-tabs-container">
+                    <!-- Navigator section -->
+                    <div class="tabs-nav">
+                        <button id="button-click">
+                            Mô tả chi tiết
+                        </button>
+
+                        <button>
+                            Thông số kỹ thuật
+                        </button>
+
+                        <button>
+                            Đánh giá (124)
+                        </button>
+                    </div>
+
+                    <!-- Tab content (For each button above) -->
+                    <div class="tab-details js-tab-details">
+                        <p>Về cà phê Arabica Ethiopia</p>
+
+                        <p>Cà phê Arabica Ethiopia đặc biệt với hương vị nhẹ nhàng, thanh mát và notes 
+                            hoa quả tự nhiên. Được trồng trên cao nguyên Ethiopia với độ cao 1500-2000m, 
+                            mang đến trải nghiệm cà phê tinh tế và đậm đà.
+                        </p>
+
+                        <p>Hương vị đặc trưng</p>
+
+                        <p>
+                            Cà phê Arabica Ethiopia có hương vị nhẹ nhàng, thanh mát với notes hoa quả tự nhiên. 
+                            Độ axit vừa phải tạo nên sự cân bằng hoàn hảo, phù hợp cho những ai yêu thích cà phê 
+                            có hương vị tinh tế.
+                        </p>
+
+                        <p>Cách pha chế</p>
+
+                        <p>
+                            Phù hợp pha với phin, espresso, pour over. Tỷ lệ pha chế khuyến nghị: 1:15 (1g cà phê : 15ml nước). Nhiệt độ nước lý tưởng: 90-95&deg;C.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -168,5 +232,7 @@
     <!-- Functional JavaScript -->
     <script src="/ProductDetail/js/product-gallery.js"></script>
     <script src="/ProductDetail/js/quantity-adjustment.js"></script>
+    <script src="/ProductDetail//js/cart-icon-animation.js"></script>
+    <script src="/ProductDetail/js/product-tabs.js"></script>
 </body>
 </html>
