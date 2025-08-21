@@ -99,3 +99,45 @@ const heads = document.getElementsByClassName("head-component");// array
     }
 }
 Header();
+
+
+const accountBtn = document.getElementById("accountBtn");
+const accountPopup = document.getElementById("accountPopup");
+const closePopup = document.getElementById("closePopup");
+const loginForm = document.querySelector(".login-form");
+const registerForm = document.querySelector(".register-form");
+const showRegister = document.getElementById("showRegister");
+const showLogin = document.getElementById("showLogin");
+
+// Mở popup mặc định ở login
+    accountBtn.addEventListener("click", () => {
+        accountPopup.style.display = "flex";
+        loginForm.classList.add("active");
+        registerForm.classList.remove("active");
+    });
+
+    // Đóng popup
+    closePopup.addEventListener("click", () => {
+        accountPopup.style.display = "none";
+    });
+
+    // Chuyển sang form Đăng ký
+    showRegister.addEventListener("click", (e) => {
+        e.preventDefault();
+        loginForm.classList.remove("active");
+        registerForm.classList.add("active");
+    });
+
+    // Chuyển sang form Đăng nhập
+    showLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        registerForm.classList.remove("active");
+        loginForm.classList.add("active");
+    });
+
+    // Click ngoài popup thì tắt
+    window.addEventListener("click", (e) => {
+        if (e.target === accountPopup) {
+            accountPopup.style.display = "none";
+        }
+});
