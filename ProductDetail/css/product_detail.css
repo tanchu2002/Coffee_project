@@ -58,7 +58,7 @@ hr {
     row-gap: 10px;
     float: none;
     width: auto;
-    margin: auto 0;
+    margin: 0 auto;
 }
 
 /* Layout for mobile view */
@@ -94,7 +94,11 @@ Aside left, right and content */
 
 .main-content {
     float: left;
-    width: 80%;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
     padding: 10px;
 }
 
@@ -119,7 +123,7 @@ Aside left, right and content */
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    column-gap: 200px;
+    column-gap: 100px;
     flex: 1 1;
     width: 100%;
 }
@@ -378,6 +382,9 @@ Aside left, right and content */
     text-align: center;
     border-radius: 6px;
     border: none;
+    overflow: hidden;
+    width: auto;
+    height: auto;
     background: transparent;
     cursor: pointer;
     padding: 0;
@@ -395,18 +402,17 @@ Aside left, right and content */
 }
 
 .cart-icon-animation {
-    position: absolute;
-    transform: translateX(-220px);
+    transform: translateX(-200px);
     transition: 300ms;
 }
 
 .add-to-cart-button:hover {
     opacity: 0.93;
     transition: 300ms;
-    
-    .add-to-cart-text  {
-        margin-left: -15px;
-    }
+}
+
+.add-to-cart-button:hover .add-to-cart-text {
+    margin-left: -15px;
 }
 
 .add-to-cart-button:active {
@@ -849,13 +855,17 @@ Aside left, right and content */
     height: auto;
     overflow: hidden;
     cursor: pointer;
+    transform: scale(1);
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
     background-color: white;
     padding: 0;
-    margin: 30px 0px 0px 0px;   /* Margin top of 30px */
+    margin: 30px 0px 0px 0px;
 }
 
 .related-product-card:hover {
     box-shadow: 4px 4px 30px grey;
+    transform: translateY(-20px)
 }
 
 .related-product-card:hover .related-product-image {

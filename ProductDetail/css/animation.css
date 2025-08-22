@@ -1,7 +1,7 @@
 .images-container-animation {
     animation-name: imageContainerFade;
     animation-duration: 800ms;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease-out
 }
 
 .informations-container-animation {
@@ -39,6 +39,12 @@
     to {
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+@keyframes productCardHover {
+    to {
+        transform: translateY(-20px);
     }
 }
 

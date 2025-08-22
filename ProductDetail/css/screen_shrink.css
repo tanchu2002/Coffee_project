@@ -80,5 +80,12 @@
     .buy-button, .buy-button:hover, .buy-button:active {
         width: 460px;
     }
-}
 
+    .specifications-tab-details {
+        flex-direction: column;
+    }
+
+    .related-products-container {
+        grid-template-columns: 1fr;
+    }
+}
