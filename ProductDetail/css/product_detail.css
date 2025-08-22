@@ -526,9 +526,12 @@ Aside left, right and content */
     align-items: center;
     width: 100%;
     margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 .product-tab-root {
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
 }
 
@@ -541,10 +544,11 @@ Aside left, right and content */
     border-radius: 20px;
     width: 100%;
     background-color: rgba(245, 241, 235, 1);
+    margin-bottom: 40px;
     padding: 5px;
 }
 
-.tabs-nav button {
+.tab-button {
     flex-wrap: wrap;
     border: none;
     border-radius: 20px;
@@ -557,7 +561,7 @@ Aside left, right and content */
     cursor: pointer;
 }
 
-#button-click {
+.button-clicked {
     background-color: white;
 }
 
@@ -571,7 +575,6 @@ Aside left, right and content */
     font-weight: 400;
     background-color: white;
     padding: 10px;
-    margin-top: 40px;
 }
 
 /* Product specifications container (Tab in active) */
@@ -596,7 +599,7 @@ Aside left, right and content */
     border-radius: 14px;
     width: auto;
     height: auto;
-    padding: 0px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
     background-color: white;
 }
 
@@ -609,7 +612,7 @@ Aside left, right and content */
     align-items: flex-start;
     row-gap: 10px;
     width: 100%;
-    height: 270px;
+    height: auto;
     margin-top: 20px;
     padding: 20px;
     background: transparent;
@@ -628,7 +631,12 @@ Aside left, right and content */
 
 /* Change the color for all the p tag */
 .column div p {
+    font-size: 14px;
     color: rgb(94, 88, 88);
+}
+
+.column div h3 {
+    font-size: 16px;
 }
 
 /* Product reviews, rating and comments container (Tab in active) */
@@ -653,8 +661,8 @@ Aside left, right and content */
     align-items: center;
     border: 1px solid rgba(228, 212, 200, 1);
     border-radius: 14px;
-    width: 70%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     padding: 20px;
     background-color: white;
 }
@@ -814,6 +822,122 @@ Aside left, right and content */
 .user-comment {
     color: rgba(125, 116, 116, 1);
     margin-top: 10px;
+}
+
+/* Related product section */
+.related-product-root {
+    width: 100%;
+}
+
+.related-products-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+/* Related product card */
+.related-product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 30px;
+    border: 1px solid rgba(228, 212, 200, 1);
+    border-radius: 16px;
+    height: auto;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: white;
+    padding: 0;
+    margin: 30px 0px 0px 0px;   /* Margin top of 30px */
+}
+
+.related-product-card:hover {
+    box-shadow: 4px 4px 30px grey;
+}
+
+.related-product-card:hover .related-product-image {
+    transition: 300ms;
+    transition-timing-function: ease-out;
+    transform: scale(1.1);
+}
+
+.related-product-image-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.related-product-image {
+    display: block;
+    border-radius: 16px 16px 0px 0px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.related-product-informations-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 12px;
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+}
+
+.related-product-star-container span {
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.related-product-price-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.related-product-price-container h2 {
+    color: rgba(139, 69, 19, 1);
+    font-weight: bold;
+}
+
+.related-product-buy-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 6px;
+    background-color: rgba(139, 69, 19, 1);
+    padding: 0px 6px 0px 12px; /* Padding left and right of 12px and 6px */
+}
+
+.related-product-cart-icon {
+    font-size: 15px;
+    width: 14px;
+    height: 14px;
+    margin: -10px 0px 0px 0px; /* Margin top of -10px */
+}
+
+.related-product-buy-button {
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 55px;
+    height: 30px;
+    cursor: pointer;
 }
 
 /* Screen shrink adjustment for product images gallery */
