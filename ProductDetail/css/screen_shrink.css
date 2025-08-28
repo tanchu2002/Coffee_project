@@ -4,13 +4,31 @@
     /* Product gallery container */
     .product-gallery-container {
         flex-direction: column;
+        max-width: 100%;
+        width: auto;
+    }
+
+    .images-container-animation {
+        max-width: 100%;
+        width: auto;
+    }
+
+    .product-images-container {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .main-image-container {
+        max-width: 800px;
         width: 100%;
     }
 
     /* Main image */
     .main-image {
-        width: 680px;
-        height: 400px;
+        max-width: 800px;
+        max-height: 450px;
+        width: 100%;
+        height: auto;
     }
 
     .sub-images-container {
